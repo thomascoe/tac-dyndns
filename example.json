@@ -1,0 +1,7 @@
+{
+    "externIf": "eth0",
+    "method": "interface",
+    "hostname": "host.ddns.net",
+    "username": "user",
+    "password": "pass"
+}
