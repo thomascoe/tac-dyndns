@@ -59,6 +59,18 @@ else:
     print "Method %s not known!" % method
     exit()
 
+# If there is a last IP in the config file and it's the same as the IP we've
+# detected, then there is no need to continue
+if "lastIp" in config:
+    if config["lastIp"] == ip:
+        print "No IP change detected"
+        exit();
+
+# Write new IP to the config file
+config["lastIp"] = ip
+with open(filename, 'w') as json_file:
+    json.dump(config, json_file, indent=4)
+
 # Encode data into URL string
 data = {
     'hostname': hostname,
