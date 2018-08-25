@@ -64,7 +64,7 @@ else:
 if "lastIp" in config:
     if config["lastIp"] == ip:
         print "No IP change detected"
-        exit();
+        exit()
 
 # Write new IP to the config file
 config["lastIp"] = ip
